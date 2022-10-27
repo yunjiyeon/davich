@@ -36,21 +36,41 @@
 .greetingInner {
     display: flex;
     padding: 130px 0;
+   
 }
 .greetingBox {
     line-height: normal;
     margin-right: 100px;
+    animation-name: h2up;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-timing-function: ease-out;    
 }
+
+@keyframes h2up{
+  0%{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(10%);
+    opacity: 0.4;
+  }
+}
+
 .greetingTitle {
     width: 700px;
     margin-bottom: 100px;
 }
+
 .greetingTitle h2{
     font-weight: 500;
     font-size: 45px;
     letter-spacing: -1.5px;
     margin-bottom: 50px;
 }
+
 .greetingTitle p{
     font-size: 18px;
     line-height: 30px;
@@ -89,4 +109,64 @@
 .greetingImg .greetingImg1{
     margin-top: 0;
 }
+
+.greetingImg1{
+    animation-name: h2up;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-timing-function: ease-out;    
+}
+
+@keyframes h2up{
+  0%{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(10%);
+    opacity: 0.4;
+  }
+}
+
+.greetingImg2{
+    animation-name: h2up1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-timing-function: ease-out;    
+}
+
+@keyframes h2up1{
+  0%{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(10%);
+    opacity: 0.4;
+  }
+}
+
+
+
+.greetingImg3{
+    animation-name: h2up2;
+    animation-duration: 2.3s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-timing-function: ease-out;    
+}
+
+@keyframes h2up2{
+  0%{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(10%);
+    opacity: 0.4;
+  }
+}
+
 

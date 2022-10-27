@@ -12,7 +12,6 @@ body {
 }
 
 
-
 /****** header ******/
 .header_container {
     position: fixed; /* 가로 너비 지정 필요 */
@@ -129,11 +128,27 @@ ul.navbar_gnb > li.on > a {
     color: #0056aa;
 }
 ul.navbar_gnb > li.on .icon {
-    transform: rotate(315deg);
+    transform: rotate(180deg);
+    top: 25px;
 }
-ul.navbar_gnb > li.on .icon::before, 
-ul.navbar_gnb > li.on .icon::after {
-    background: #0056aa;
+ul.navbar_gnb > li.on .icon::before
+{
+    background: #fff;
+    display: block;
+    border: 2px solid #0056aa;
+    border-top-color: currentcolor;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-left-color: currentcolor;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-top: transparent;
+    border-left: transparent;
+    color: grey;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    transform: rotate(45deg);
+    margin-bottom: 10px;
 }
 
 .enbContainer{
@@ -274,9 +289,27 @@ ul.navbar_gnb > li.on .icon::after {
     justify-content: space-between;
     align-items: center;
 }
-.countNum {
+.countContainer .countBox .countNum {
     text-align: center;
+    /* transform: translateY(15px); */
+    opacity: 0.2;
+    animation-name: countUpDown;
+    animation-duration: 700ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
+
+@keyframes countUpDown{
+    from{
+        opacity: 1;
+        scale: 1.02;
+    }
+    to{
+        opacity: 0.7;
+    }
+}
+
+
 .countNum p{
     font-size: 40px;
     line-height: 50px;
@@ -289,6 +322,7 @@ ul.navbar_gnb > li.on .icon::after {
     font-size: 22px;
     margin-top: 30px;
 }
+
 
 /****** section 3 / mainBrand ******/
 
@@ -303,8 +337,6 @@ ul.navbar_gnb > li.on .icon::after {
     position: relative;
     font-size: 100px;
     letter-spacing: -0.8px;
-    /* background: #0056aa; */
-    /* padding: 0px 40px; */
     border-bottom: 5px solid #0056aa;
     text-align: center;
     color: #222;
@@ -370,15 +402,66 @@ ul.navbar_gnb > li.on .icon::after {
 .proWrapMini .proImg img:nth-child(1){
     top: 0px;
     right: 0;
+    /* animation-name: h2up1;
+    animation-duration: 1.7s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-timing-function: ease-out; */
 }
+
+/* @keyframes h2up1{
+  0%{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(100%);
+    opacity: 0.4;
+  }
+} */
+
 .proWrapMini .proImg img:nth-child(2){
     top: 360px;
     left: 100px;
+    /* animation-name: h2up2;
+    animation-duration: 2.3s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-timing-function: ease-out; */
 }
+/* 
+@keyframes h2up2{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(100%);
+    opacity: 0.4;
+  }
+} */
+
+
 .proWrapMini .proImg img:nth-child(3){
     top: 720px;
     right: 0px;
+    /* animation-name: h2up3;
+    animation-duration: 2.8s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-timing-function: ease-out; */
 }
+/* 
+@keyframes h2up3{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(100%);
+    opacity: 0.4;
+  }
+} */
 
 .mProImg{
     display: none;
@@ -794,19 +877,25 @@ ul.navbar_gnb > li.on .icon::after {
 .storeDesc img {
 
 }
-.storeTxt {
-    color: #fff;
+.slick-slide .storeTxt {
+    position: relative;
+}
+.slick-slide .storeTxt h4{
     position: absolute;
-    top: 25%;
-    left: 60%;
+    font-size: 35px;
+    width: 40%;
+    top: 30%;
+    right: 0;
+    color: #fff;
 }
-.storeTxt h4{
-    font-size: 40px;
-    line-height: 70px;
-}
-.storeTxt p{
+.slick-slide .storeTxt p{
+    position: absolute;
     font-size: 25px;
     font-weight: 700;
+    width: 40%;
+    top: 50%;
+    right: 0;
+    color: #fff;
 }
 
 /****** footer ******/
@@ -899,7 +988,7 @@ footer{ background: #f9f9f9;}
 
 .footerFamilySite .familySite option {
     background: #fff;
-    color: #0056aa;
+    color: #222;
     padding: 3px 0;
     font-size: 16px;
     border: 0 none;
@@ -938,3 +1027,32 @@ footer{ background: #f9f9f9;}
 .mFamilySite{
     background: #f9f9f9;
 }
+
+#topBtn{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #003a70;
+  position: fixed;
+  z-index: 999999999999;
+  padding-top: 8px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: .3s;
+  bottom: 30px;
+  right: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+#topBtn img {
+  width: 24px;
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+/* slick */
+
+.slick-slide {
+    margin: 0 10px;
+  }

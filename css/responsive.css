@@ -99,20 +99,18 @@
         width: 40vw;
     }
     .storeDesc  img {
-        width:  40vw;
+        width:  100%
     }
-    .storeTxt {
-        top: 20%;
-    }
-    .storeTxt h4{
-        font-size: 30px;
-        line-height: 70px;
-    }
-    .storeTxt p{
-        font-size: 19px;
-        font-weight: 700;
-    }
-
+    
+  .slick-slide .storeTxt h4{
+    font-size: 30px;
+    width: 45%;
+}
+.slick-slide .storeTxt p{
+    font-size: 20px;
+    width: 45%;
+    top: 55%;
+}
     /* footer */
     .footerContainer {
         width: 1200px;
@@ -212,25 +210,31 @@
 
     .icon {
         position: absolute;
-        top: 25px;
-        right: 10px;
+        top: 20px;
+        right: 15px;
         width: 14px;
         height: 14px;
         transition: .5s;
     }
-    .icon::before, .icon::after {
-        position: absolute;
+    .icon::before{
         content: "";
-        top: calc(50% - 2px);
-        width: 14px;
-        height: 4px;
-        background: #0056aa;
-    }
-
-    .icon::before {
-    }
-    .icon::after{
-        transform: rotate(90deg);
+        width: 10px;
+        height: 10px;
+        display: block;
+        border: 2px solid #222;
+        border-top-color: currentcolor;
+        border-top-style: solid;
+        border-top-width: 2px;
+        border-left-color: currentcolor;
+        border-left-style: solid;
+        border-left-width: 2px;
+        border-top: transparent;
+        border-left: transparent;
+        color: grey;
+        margin: 0 auto;
+        margin-bottom: 0px;
+        transform: rotate(45deg);
+        margin-bottom: 10px;
     }
     .sub_shadow { display: none; } /* 스크립트 넣은 뒤 삭제하기 */
 
@@ -398,15 +402,17 @@
         margin-bottom: 20px;
         text-align: center;
     }
+
+    /* 슬릭슬릭슬릭슬릭슬릭 */
     .instaInner{
-        display: none;
+        display: block;
         width: 100%;    
         margin-right: 0px;
         margin-bottom: 0px;
     }
-    .instaInner:nth-child(2){
+    /* .instaInner:nth-child(2){
         display: block;
-    } 
+    }  */
 
     .instaIcon {
         right: 10px;
@@ -433,16 +439,19 @@
     .storeDesc  img {
         width:  100%;
     }
-    .storeTxt {
-        top: 25%;
+   
+    .slick-slide .storeTxt h4{
+        font-size: 45px;
+        top: 30%;
+        width: 45%
     }
-    .storeTxt h4{
-        font-size: 6vw;
-        line-height: 100px;
-    }
-    .storeTxt p{
+    .slick-slide .storeTxt p{
         font-size: 3vw;
+        top: 50%;
+        width: 45%;
     }
+
+    
     .btnAll {
         display: none;
     }
@@ -610,7 +619,7 @@
         padding: 10px 10px;
         font-size: 16px;
     }
-    .proLens .proWrap .proImg .proImgMain {
+   .proWrap .proImg .proImgMain {
         display: none;
     }
     .proImgMain{
@@ -751,15 +760,21 @@
         overflow: hidden;
         white-space: nowrap;
     }
-    .storeTxt {
+    .slick-slide .storeTxt {
+       position: relative;
+    }
+  .slick-slide .storeTxt h4 {
+        width: 45%; 
+        font-size: 4.5vw;
         top: 30%;
+        height: 50px;
+         font-weight: 500;
     }
-    .storeTxt h4{
-        font-size: 5vw;
-        line-height: 1.5;
-    }
-    .storeTxt p{
+    .slick-slide .storeTxt p{
+        width: 45%;
         font-size: 3vw;
+        top: 55%;
+        font-weight: 500;
     }
 
     /* footer */
@@ -812,4 +827,9 @@
     .mAddress{
         display: block;
     }
-}
+
+    #topBtn{
+      bottom: 5px;
+      right: 20px;
+    }
+  }
